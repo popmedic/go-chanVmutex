@@ -10,6 +10,10 @@
 
 \*_MacBook Pro, 2.8 GHz Intel Core i7, 16 GB 1600 MHz DDR3_
 
+## Objective
+
+The objective of this project was to benchmark the difference in using a Go Channel against a Go Mutex when used to guard a critical section.
+
 ## How-to
 
 To get these results yourself from the terminal 
@@ -31,10 +35,6 @@ cd $GOPATH/src/github.com/popmedic/go-chanVmutex/account
 ``` bash
 go test -bench=.
 ```
-
-## Objective
-
-The objective of this project was to benchmark the difference in using a Go Channel against a Go Mutex when used to guard a critical section.
 
 ## Scenario
 
