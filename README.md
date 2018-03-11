@@ -10,7 +10,7 @@
 
 \*_MacBook Pro, 2.8 GHz Intel Core i7, 16 GB 1600 MHz DDR3_
 
-> To get these results yourself, clone the project and cd into the account directory.  Run the benchmarks with `go test -bench=.` 
+> To get these results yourself, clone the project and cd into the account directory.  Run the benchmarks with `go test -bench=.`
 
 ## Objective
 
@@ -26,9 +26,9 @@ For the scenario I selected a Bank Account object because summing a bank account
 4. Thread 2 adds its amount (say 10.00, totaling 20.00)
 5. Gosh darn it the total is 20.00 BUT WE ADDED 20.00 to 10.00, it should be 30.00!!!
 
-If instead we lock the "critical section" (adding to the balance) so that Thread 2 will not get the balance until Thread 1 is finished with the "critical section," we can avoid this "race condition."  Both [ChanAccount](#ChanLockAccount) and [MutexAccount](#MutexAccount) use this technique.
+If instead we lock the "critical section" (adding to the balance) so that Thread 2 will not get the balance until Thread 1 is finished with the "critical section," we can avoid this "race condition."  Both [ChanAccount](#chanlockaccount) and [MutexAccount](#mutexaccount) use this technique.
 
-Go language introduced a way to avoid locks by communication through channels, instead of relying on the condition of a lock ("communication instead of conditions.")  One can do this by adding a Go worker routine to the class that tries getting a value off a channel, and if it can, use the value, if no value is on the channel, do nothing. The [ChanAccount](#ChanAccount) uses this technique.
+Go language introduced a way to avoid locks by communication through channels, instead of relying on the condition of a lock ("communication instead of conditions.")  One can do this by adding a Go worker routine to the class that tries getting a value off a channel, and if it can, use the value, if no value is on the channel, do nothing. The [ChanAccount](#chanaccount) uses this technique.
 
 ## ChanLockAccount
 
