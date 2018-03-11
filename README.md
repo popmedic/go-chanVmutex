@@ -95,6 +95,14 @@ for {
 
 ## Conclusion
 
-I found through this scenario that it is best to do access control for thread safety by using a Mutex.  I decided this based on the results of benchmarking, and also on the fact that it seems more readable and maintainable to use the common pattern of locking then the concept of "communication over conditions."
+I found through this scenario that it is best to do access control for thread safety by using a Mutex.  I decided this based on the results of benchmarking, and also on the fact that it seems more readable to use the common pattern of locking then the concept of "communication over conditions."  
+
+One example of what I mean by readable is that I would like to have made there not be a `Balance` function.  I could have had `Sum` return the result every time. Then I could just use `Sum()` to get the balance, and adhere to my minimalistic ways.  Since the summation is actually done in the `worker` with the channel pattern, it made it impossible to return the balance from the `Sum` function.
+
+Another example of readability would be if one looks closely at the `worker` function you will see that it is actually using the `balanceChannel` as a `chanLock`. To me this seems confusing, and did take some time and testing to get correct.  
+
+In conclusion I found the channel pattern to be poor for access control like in this scenario.  There are probably other scenarios that would change my mind about the channel pattern, but as far as this scenario, mutexes obviously win.
+
+## More
 
 Interested in how to optimize more?  Check out my research on [GO-DarnDefer](https://github.com/popmedic/go-darndefer)
