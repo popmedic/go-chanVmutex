@@ -66,8 +66,8 @@ Go language introduced a way to avoid locks by communication through channels, i
 One way I have seen people use channels is in place of a Mutex by having a buffered channel of 1, and putting a value on the channel to lock before the critical section and removing a value off the channel after the critical section to unlock.  
 
 ``` Go
-a.chlock <- 0
-defer func(a *ChanLockAccount) { <-a.chlock }(a)
+a.lock <- 0
+defer func(a *ChanLockAccount) { <-a.lock }(a)
 for _, amount := range amounts {
     a.balance = a.balance + amount
 }

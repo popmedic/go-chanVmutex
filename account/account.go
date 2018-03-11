@@ -11,7 +11,7 @@ type IAccount interface {
 
 type ChanLockAccount struct {
 	balance float64
-	chlock  chan byte
+	lock    chan byte
 }
 
 type MutexAccount struct {
@@ -31,27 +31,27 @@ func NewChanLockAccount(amounts ...float64) *ChanLockAccount {
 	}
 	return &ChanLockAccount{
 		balance: balance,
-		chlock:  make(chan byte, 1),
+		lock:    make(chan byte, 1),
 	}
 }
 
 func (a *ChanLockAccount) Sum(amounts ...float64) {
-	a.chlock <- 0
-	defer func(a *ChanLockAccount) { <-a.chlock }(a)
+	a.lock <- 0
+	defer func(a *ChanLockAccount) { <-a.lock }(a)
 	for _, amount := range amounts {
 		a.balance = a.balance + amount
 	}
 }
 
 func (a *ChanLockAccount) Balance() (balance float64) {
-	a.chlock <- 0
-	defer func(a *ChanLockAccount) { <-a.chlock }(a)
+	a.lock <- 0
+	defer func(a *ChanLockAccount) { <-a.lock }(a)
 	balance = a.balance
 	return
 }
 
 func NewMutexAccount(amounts ...float64) *MutexAccount {
-	var balance float64 = 0
+	var balance float64
 	for _, amount := range amounts {
 		balance = balance + amount
 	}
