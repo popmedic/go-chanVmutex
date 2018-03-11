@@ -10,7 +10,7 @@
 
 \*_MacBook Pro, 2.8 GHz Intel Core i7, 16 GB 1600 MHz DDR3_
 
-> To get these results yourself, get the project `go get github.com/popmedic/go-chanVmutex`, cd into the account directory `cd $GOPATH/src/github.com/popmedic/go-chanVmutex/account` and run the benchmarks `go test -bench=.`.
+> To get these results yourself, get the project `go get github.com/popmedic/go-chanVmutex/...`, cd into the account directory `cd $GOPATH/src/github.com/popmedic/go-chanVmutex/account` and run the benchmarks `go test -bench=.`.
 
 ## Objective
 
