@@ -18,7 +18,7 @@ The objective of this project was to benchmark the difference in using a Go Chan
 
 To get these results yourself from the terminal 
 
-1. get the project 
+1. Get the project 
 
 ``` bash
 go get github.com/popmedic/go-chanVmutex/...
