@@ -112,7 +112,7 @@ One example of what I mean by readable is that I would like to have made there n
 
 Another example of readability would be if one looks closely at the `worker` function you will see that it is actually using the `balanceChannel` as a `chanLock`. To me this seems confusing, and did take some time and testing to get correct.  
 
-In conclusion I found the channel pattern to be poor for access control like in this scenario.  There are probably other scenarios that would change my mind about the channel pattern, but as far as this scenario, mutexes obviously win.
+In conclusion I found the channel pattern to be poor for access control like in this scenario.  There are probably other scenarios that would change my mind about the channel pattern, but as far as this scenario, **mutexes obviously win**.
 
 ## More
 
