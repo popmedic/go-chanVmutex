@@ -1,4 +1,4 @@
-# Benchmarking Channels Vs. Mutex in Go.
+# Benchmarking Channels Vs. Mutexes in Go.
 
 ## Results\*
 
