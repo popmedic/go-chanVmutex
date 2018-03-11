@@ -63,7 +63,7 @@ For the scenario I selected a Bank Account object because summing a bank account
 2. Thread 2 gets the balance before thread 1 has finished with the balance (so they get 10.00 also)
 3. Thread 1 adds its amount (say 10.00, totaling 20.00)
 4. Thread 2 adds its amount (say 10.00, totaling 20.00)
-5. Gosh darn it the total is 20.00 BUT WE ADDED 20.00 to 10.00, it should be 30.00!!!
+5. Gosh darn it the total is 20.00 BUT WE ADDED 20.00 (10.00 in step-3 and again in step-4) to 10.00, it should be 30.00!!!
 
 If instead we lock the "critical section" (adding to the balance) so that Thread 2 will not get the balance until Thread 1 is finished with the "critical section," we can avoid this "race condition."  Both [ChanAccount](#chanlockaccount) and [MutexAccount](#mutexaccount) use this technique.
 
