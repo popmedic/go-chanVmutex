@@ -124,4 +124,4 @@ In conclusion I found the channel pattern to be poor for access control like in 
 
 ## More
 
-Interested in how to optimize more?  Check out my research on [GO-DarnDefer](https://github.com/popmedic/go-darndefer)
+Interested in how to optimize more?  Check out my research on [gosh darn defer](https://github.com/popmedic/go-darndefer).
