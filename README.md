@@ -14,7 +14,7 @@
 
 The objective of this project was to benchmark the difference in using a Go Channel against a Go Mutex when used to guard a critical section.
 
-## How-to
+## Running for yourself
 
 To get these results yourself from the terminal 
 
