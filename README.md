@@ -1,6 +1,21 @@
 # Benchmarking Channels Vs. Mutexes in Go.
+| Table of Contents |
+| --- |
+| [Objective](#objective) |
+| [Results](#results) |
+| [Running for yourself](#running-for-yourself) |
+| [Scenario](#scenario) |
+| [ChanLockAccount](#chanlockaccount) |
+| [MutexAccount](#mutexaccount) |
+| [ChanAccount](#chanaccount) |
+| [Conclusion](#conclusion) |
+| [More](#more) |
 
-## Results\*
+## Objective
+
+The objective of this project was to benchmark the difference in using a Go Channel against a Go Mutex when used to guard a critical section.
+
+## Results
 
 | Lock Mechanism | Results (ns/op) |
 | --- | --- |
@@ -8,11 +23,7 @@
 | Mutex Lock | 584 ns/op |
 | Channel Worker | 1018 ns/op |
 
-\*_MacBook Pro, 2.8 GHz Intel Core i7, 16 GB 1600 MHz DDR3_
-
-## Objective
-
-The objective of this project was to benchmark the difference in using a Go Channel against a Go Mutex when used to guard a critical section.
+> _MacBook Pro, 2.8 GHz Intel Core i7, 16 GB 1600 MHz DDR3_
 
 ## Running for yourself
 
