@@ -4,9 +4,9 @@
 
 | Lock Mechanism | Results (ns/op) |
 | --- | --- |
-| Channel Lock | 104 ns/op |
-| Mutex Lock | 75.8 ns/op |
-| Channel Worker | 309 ns/op |
+| Channel Lock | 628 ns/op |
+| Mutex Lock | 584 ns/op |
+| Channel Worker | 1018 ns/op |
 
 \*_MacBook Pro, 2.8 GHz Intel Core i7, 16 GB 1600 MHz DDR3_
 
@@ -96,3 +96,5 @@ for {
 ## Conclusion
 
 I found through this scenario that it is best to do access control for thread safety by using a Mutex.  I decided this based on the results of benchmarking, and also on the fact that it seems more readable and maintainable to use the common pattern of locking then the concept of "communication over conditions."
+
+Interested in how to optimize more?  Check out my research on [GO-DarnDefer](https://github.com/popmedic/go-darndefer)
