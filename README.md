@@ -47,6 +47,14 @@ cd $GOPATH/src/github.com/popmedic/go-chanVmutex/account
 go test -bench=.
 ```
 
+or
+
+``` bash
+go get github.com/popmedic/go-chanVmutex/... && \
+cd $GOPATH/src/github.com/popmedic/go-chanVmutex/account && \
+go test -bench=.
+```
+
 ## Scenario
 
 For the scenario I selected a Bank Account object because summing a bank account balance is the classic example of a "race condition."  The "race condition" occurs when we have an Account object that stores a users bank balance.  If multiple "threads" try to "sum" on this bank account without locking we can end up with the problem of:
