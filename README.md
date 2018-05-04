@@ -1,4 +1,8 @@
+[![Build Status](https://travis-ci.org/popmedic/go-chanVmutex.svg?branch=master)](https://travis-ci.org/popmedic/go-chanVmutex)
+[![codecov](https://codecov.io/gh/popmedic/go-chanVmutex/branch/master/graph/badge.svg)](https://codecov.io/gh/popmedic/go-chanVmutex)
+
 # Benchmarking Channels Vs. Mutexes in Go.
+
 | Table of Contents |
 | --- |
 | [Objective](#objective) |
